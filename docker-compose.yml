@@ -6,7 +6,7 @@ services:
     depends_on:
       - api
     ports:
-      - "8000:8000"
+      - "8000:80"
     networks:
       - backend
   api:
@@ -23,7 +23,7 @@ services:
     image: mongo
     restart: always
     volumes: 
-      - mongodb_data:/data/db
+      - mongodb:/data/mongo
     environment: 
       MONGODB_INITDB_ROOT_USERNAME: JanssenSBD
       MONGODB_INITDB_ROOT_PASSWORD: janssen
@@ -34,4 +34,4 @@ networks:
   backend:
 
 volumes: 
-  mongodb_data:
+  mongodb:
