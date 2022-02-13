@@ -1,21 +1,23 @@
-version: "3.8"
+version: "3"
 services:
   web:
     build: ./frontend
+    #Communication avec l'API
     depends_on:
       - api
     ports:
       - "8000:8000"
     networks:
-      - network-backend
+      - backend
   api:
     build: ./backend
+    #Une requête vers mongo
     depends_on:
       - mongo
     ports:
-      - "8001:8001"
+      - "8001:83"
     networks: 
-      - network-backend
+      - backend
   
   mongo:
     image: mongo
@@ -26,10 +28,10 @@ services:
       MONGODB_INITDB_ROOT_USERNAME: JanssenSBD
       MONGODB_INITDB_ROOT_PASSWORD: janssen
     networks: 
-      - network-backend
+      - backend
 
 networks:
-  network-backend:
+  backend:
 
 volumes: 
   mongodb_data:
