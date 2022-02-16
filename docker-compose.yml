@@ -1,37 +1,38 @@
-version: "3"
+version: "3.8"
 services:
   web:
     build: ./frontend
-    #Communication avec l'API
     depends_on:
       - api
     ports:
-      - "8000:80"
+      - "3000:3000"
     networks:
-      - backend
+      - network-backend
   api:
     build: ./backend
-    #Une requête vers mongo
     depends_on:
       - mongo
     ports:
-      - "8001:83"
+      - "3001:3001"
     networks: 
-      - backend
+     - network-backend
   
   mongo:
     image: mongo
     restart: always
     volumes: 
-      - mongodb:/data/mongo
+      - mongodb_data:/data/db
     environment: 
-      MONGODB_INITDB_ROOT_USERNAME: JanssenSBD
-      MONGODB_INITDB_ROOT_PASSWORD: janssen
+      MONGODB_INITDB_ROOT_USERNAME: username
+      MONGODB_INITDB_ROOT_PASSWORD: password
+    # uncomment following lines to access db locally
+    # ports:
+    #   - 27017:27017
     networks: 
-      - backend
+     - network-backend
 
 networks:
-  backend:
+  network-backend:
 
 volumes: 
-  mongodb:
+  mongodb_data:
