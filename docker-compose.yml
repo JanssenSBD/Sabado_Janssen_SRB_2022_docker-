@@ -5,7 +5,7 @@ services:
     depends_on:
       - api
     ports:
-      - "3000:3000"
+      - "8000:80"
     networks:
       - network-backend
   api:
@@ -13,7 +13,7 @@ services:
     depends_on:
       - mongo
     ports:
-      - "3001:3001"
+      - "8001:81"
     networks: 
      - network-backend
   
@@ -26,7 +26,7 @@ services:
       MONGODB_INITDB_ROOT_USERNAME: username
       MONGODB_INITDB_ROOT_PASSWORD: password
     ports:
-      - 27017:27017
+      - "27017:27017"
     networks: 
       - network-backend
 
