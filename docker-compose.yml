@@ -7,7 +7,7 @@ services:
     ports:
       - "8000:80"
     networks:
-      - network-backend
+      - backend
   api:
     build: ./backend
     depends_on:
@@ -15,7 +15,7 @@ services:
     ports:
       - "8001:8080"
     networks: 
-     - network-backend
+     - backend
   
   mongo:
     image: mongo
@@ -25,13 +25,12 @@ services:
     environment: 
       MONGODB_INITDB_ROOT_USERNAME: janssen
       MONGODB_INITDB_ROOT_PASSWORD: root
-    ports:
-      - "27017:27017"
+   
     networks: 
-      - network-backend
+      - backend
 
 networks:
-  network-backend:
+  backend:
 
 volumes: 
   mongodb_data:
