@@ -21,7 +21,7 @@ services:
     image: mongo
     restart: always
     volumes: 
-      - mongodb_data:/data/db
+      - mongodb:/data/db
     environment: 
       MONGODB_INITDB_ROOT_USERNAME: janssen
       MONGODB_INITDB_ROOT_PASSWORD: root
@@ -33,4 +33,4 @@ networks:
   backend:
 
 volumes: 
-  mongodb_data:
+  mongodb:
