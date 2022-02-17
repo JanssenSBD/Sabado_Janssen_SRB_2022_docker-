@@ -14,6 +14,3 @@ COPY . .
 
 EXPOSE 80
 CMD ["npm", "start"]
-© 2022 GitHub, Inc.
-Terms
-Priva
