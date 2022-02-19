@@ -8,3 +8,7 @@ Voici une implémentation d'une architecture à 3 niveaux
 
 * frontend contiendra le code du frontend et son Dockerfile
 * backend contiendra le code api et son Dockerfile
+
+# Docker-compose
+
+Dans notre ```docker-compose.yml``` nous avons trois services ```web```, ```api``` et ```mongo```.
