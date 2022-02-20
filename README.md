@@ -25,6 +25,16 @@ Notre conteneur db est également connecté à network-backend. Étant donné qu
 
 La configuration ```depend_on``` indique à docker de composer l'ordre dans lequel afficher les conteneurs. Dans notre cas,```mongodb``` sera démarré en premier suivi de ```api```.
 
-* mongodb : Nous utilisons une image basée sur ```mongo```. Les variables d'environnement indiquent à docker d'initialiser le serveur ```MONGODB``` avec avec l'utilisateur et le mot de passe.
+* mongodb : Nous utilisons une image basée sur ```mongo```. La variable ```environment``` indiquent à docker d'initialiser le serveur ```MONGODB``` avec avec l'utilisateur et le mot de passe.
 
 La section volumes mappe le répertoire init_sql_scripts au répertoire ```mongo:/data/db``` dans le conteneur. Tous les fichiers à l'intérieur seront exécutés en séquence une fois la base de données créée.
+
+#Powershell
+
+* Maintenat nous pouvons utiliser la commande ```docker-compose up --build```pour tout lancer. L'indicateur ```--build``` déclenchera la construction d'images si elles ne sont pas déjà construites.
+
+* Pour supprimer nous allons utiliser la commande ```docker image ls``` pour identifier les images puis entrer la commande suivante ```docker image rm``` suivi de l' IMAGE ID ou des IMAGE ID.
+pour supprimer les conteneurs on utilise la commande ```docker-compose down```.
+
+* Pour stopper le conteneur sera la commande suivant ```docker stop```.
+
