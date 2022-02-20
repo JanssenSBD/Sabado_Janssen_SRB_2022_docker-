@@ -29,7 +29,7 @@ La configuration ```depend_on``` indique à docker de composer l'ordre dans lequ
 
 La section volumes mappe le répertoire init_sql_scripts au répertoire ```mongo:/data/db``` dans le conteneur. Tous les fichiers à l'intérieur seront exécutés en séquence une fois la base de données créée.
 
-#Powershell
+# Powershell
 
 * Maintenat nous pouvons utiliser la commande ```docker-compose up --build```pour tout lancer. L'indicateur ```--build``` déclenchera la construction d'images si elles ne sont pas déjà construites.
 
