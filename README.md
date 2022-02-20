@@ -27,7 +27,7 @@ La configuration ```depend_on``` indique à docker de composer l'ordre dans lequ
 
 * mongodb : Nous utilisons une image basée sur ```mongo```. La variable ```environment``` indiquent à docker d'initialiser le serveur ```MONGODB``` avec avec l'utilisateur et le mot de passe.
 
-La section volumes mappe le répertoire init_sql_scripts au répertoire ```mongo:/data/db``` dans le conteneur. Tous les fichiers à l'intérieur seront exécutés en séquence une fois la base de données créée.
+La section volumes mappe le répertoire init_sql_scripts au répertoire ```mongodb:/data/db``` dans le conteneur. Tous les fichiers à l'intérieur seront exécutés en séquence une fois la base de données créée.
 
 # Powershell
 
