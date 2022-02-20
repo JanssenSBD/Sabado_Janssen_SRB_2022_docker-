@@ -36,5 +36,5 @@ La section volumes mappe le répertoire init_sql_scripts au répertoire ```mongo
 * Pour supprimer nous allons utiliser la commande ```docker image ls``` pour identifier les images puis entrer la commande suivante ```docker image rm``` suivi de l' IMAGE ID ou des IMAGE ID.
 pour supprimer les conteneurs on utilise la commande ```docker-compose down```.
 
-* Pour stopper le conteneur sera la commande suivant ```docker stop```.
+* Pour stopper le conteneur, la commande suivante sera ```docker stop```.
 
